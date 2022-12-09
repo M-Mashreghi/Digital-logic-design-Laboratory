@@ -1,0 +1,991 @@
+TimeQuest Timing Analyzer report for OP_moore
+Tue Nov 29 17:48:27 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Output Enable Times
+ 21. Minimum Output Enable Times
+ 22. Output Disable Times
+ 23. Minimum Output Disable Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'clk'
+ 30. Fast Model Hold: 'clk'
+ 31. Fast Model Minimum Pulse Width: 'clk'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Propagation Delay
+ 37. Minimum Propagation Delay
+ 38. Output Enable Times
+ 39. Minimum Output Enable Times
+ 40. Output Disable Times
+ 41. Minimum Output Disable Times
+ 42. Multicorner Timing Analysis Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Progagation Delay
+ 48. Minimum Progagation Delay
+ 49. Setup Transfers
+ 50. Hold Transfers
+ 51. Report TCCS
+ 52. Report RSKM
+ 53. Unconstrained Paths
+ 54. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; OP_moore                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 467.29 MHz ; 380.08 MHz      ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.140 ; -8.052        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -15.073               ;
++-------+--------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                            ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.140 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.178      ;
+; -1.140 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.178      ;
+; -1.140 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.178      ;
+; -1.140 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.178      ;
+; -1.055 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 2.093      ;
+; -1.026 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 2.064      ;
+; -1.004 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 2.042      ;
+; -0.974 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.974 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.974 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.974 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 2.012      ;
+; -0.845 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 1.883      ;
+; -0.844 ; counter10:counter|Count[2]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.836 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.874      ;
+; -0.836 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.874      ;
+; -0.836 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.874      ;
+; -0.836 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.874      ;
+; -0.820 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.858      ;
+; -0.779 ; counter10:counter|Count[1]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.817      ;
+; -0.748 ; counter10:counter|Count[2]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.786      ;
+; -0.737 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.775      ;
+; -0.715 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 1.753      ;
+; -0.708 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.746      ;
+; -0.688 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.726      ;
+; -0.638 ; counter10:counter|Count[1]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.676      ;
+; -0.536 ; counter10:counter|Count[3]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.574      ;
+; -0.527 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.565      ;
+; -0.524 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 1.562      ;
+; -0.509 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 1.547      ;
+; -0.508 ; counter10:counter|Count[0]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.546      ;
+; -0.477 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 1.515      ;
+; -0.397 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.435      ;
+; -0.396 ; counter10:counter|Count[0]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 1.434      ;
+; -0.383 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 1.421      ;
+; -0.254 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 1.292      ;
+; -0.231 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 1.269      ;
+; -0.111 ; OnePulse:one_pulse|ps.A          ; OnePulse:one_pulse|ps.B          ; clk          ; clk         ; 1.000        ; 0.000      ; 1.149      ;
+; -0.105 ; OnePulse:one_pulse|ps.B          ; OnePulse:one_pulse|ps.A          ; clk          ; clk         ; 1.000        ; 0.000      ; 1.143      ;
+; 0.082  ; counter10:counter|Count[0]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.956      ;
+; 0.098  ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 0.940      ;
+; 0.123  ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 0.915      ;
+; 0.130  ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 0.908      ;
+; 0.307  ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; counter10:counter|Count[0]       ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; counter10:counter|Count[1]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 0.731      ;
++--------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                            ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; counter10:counter|Count[0]       ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; counter10:counter|Count[1]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.622 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 0.908      ;
+; 0.629 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.654 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 0.940      ;
+; 0.670 ; counter10:counter|Count[0]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.830 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.116      ;
+; 0.832 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.118      ;
+; 0.857 ; OnePulse:one_pulse|ps.B          ; OnePulse:one_pulse|ps.A          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.143      ;
+; 0.863 ; OnePulse:one_pulse|ps.A          ; OnePulse:one_pulse|ps.B          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.149      ;
+; 0.983 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 1.269      ;
+; 1.006 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.292      ;
+; 1.135 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 1.421      ;
+; 1.148 ; counter10:counter|Count[0]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.434      ;
+; 1.149 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.435      ;
+; 1.189 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.475      ;
+; 1.221 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.507      ;
+; 1.229 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 1.515      ;
+; 1.232 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.518      ;
+; 1.260 ; counter10:counter|Count[0]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.546      ;
+; 1.261 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 1.547      ;
+; 1.263 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.549      ;
+; 1.264 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.550      ;
+; 1.268 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.276 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 1.562      ;
+; 1.279 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.565      ;
+; 1.288 ; counter10:counter|Count[3]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.574      ;
+; 1.390 ; counter10:counter|Count[1]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.676      ;
+; 1.440 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.726      ;
+; 1.460 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.746      ;
+; 1.467 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 1.753      ;
+; 1.489 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.775      ;
+; 1.500 ; counter10:counter|Count[2]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.786      ;
+; 1.531 ; counter10:counter|Count[1]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.817      ;
+; 1.572 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 1.858      ;
+; 1.596 ; counter10:counter|Count[2]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.597 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.756 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 2.042      ;
+; 1.778 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 2.064      ;
+; 1.807 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 2.093      ;
+; 1.892 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 1.892 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 1.892 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
+; 1.892 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 2.178      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.A ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.A ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.B ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.B ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.C ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.C ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.D ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.D ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.E ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.E ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OnePulse:one_pulse|ps.A          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; OnePulse:one_pulse|ps.A          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; OnePulse:one_pulse|ps.B          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; OnePulse:one_pulse|ps.B          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[0]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[1]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[2]       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[3]       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[3]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.A|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.A|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.B|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.B|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.C|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.C|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.D|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.D|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.E|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.E|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; one_pulse|ps.A|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; one_pulse|ps.A|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; one_pulse|ps.B|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; one_pulse|ps.B|clk               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SerIn     ; clk        ; 1.233 ; 1.233 ; Rise       ; clk             ;
+; clkPB     ; clk        ; 0.527 ; 0.527 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SerIn     ; clk        ; -0.199 ; -0.199 ; Rise       ; clk             ;
+; clkPB     ; clk        ; -0.082 ; -0.082 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 10.118 ; 10.118 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 10.045 ; 10.045 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 9.945  ; 9.945  ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 9.736  ; 9.736  ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 9.731  ; 9.731  ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 9.743  ; 9.743  ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 9.763  ; 9.763  ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 10.052 ; 10.052 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 10.052 ; 10.052 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 10.074 ; 10.074 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 10.084 ; 10.084 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 10.118 ; 10.118 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 9.915  ; 9.915  ; Rise       ; clk             ;
++-----------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 9.286 ; 9.286 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 9.596 ; 9.596 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 9.623 ; 9.623 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 9.495 ; 9.495 ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 9.627 ; 9.627 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 9.286 ; 9.286 ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 9.286 ; 9.286 ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 9.297 ; 9.297 ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 9.317 ; 9.317 ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 9.607 ; 9.607 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 9.607 ; 9.607 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 9.628 ; 9.628 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 9.638 ; 9.638 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 9.672 ; 9.672 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 9.915 ; 9.915 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 4.978 ;    ;    ; 4.978 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 4.978 ;    ;    ; 4.978 ;
++------------+-------------+-------+----+----+-------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; SerOut    ; clk        ; 10.429 ;      ; Rise       ; clk             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; SerOut    ; clk        ; 10.429 ;      ; Rise       ; clk             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; SerOut    ; clk        ; 10.429    ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; SerOut    ; clk        ; 10.429    ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.075 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -12.380               ;
++-------+--------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                           ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.075 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.957      ;
+; 0.075 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.957      ;
+; 0.075 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.957      ;
+; 0.075 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.957      ;
+; 0.142 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.890      ;
+; 0.142 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.890      ;
+; 0.142 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.890      ;
+; 0.142 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.890      ;
+; 0.187 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.845      ;
+; 0.187 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.845      ;
+; 0.187 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.845      ;
+; 0.187 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.845      ;
+; 0.197 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.835      ;
+; 0.209 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.823      ;
+; 0.218 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.814      ;
+; 0.261 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.771      ;
+; 0.280 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.752      ;
+; 0.282 ; counter10:counter|Count[2]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.750      ;
+; 0.315 ; counter10:counter|Count[1]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.717      ;
+; 0.315 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.717      ;
+; 0.322 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.710      ;
+; 0.324 ; counter10:counter|Count[2]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.708      ;
+; 0.325 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.707      ;
+; 0.327 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.705      ;
+; 0.355 ; counter10:counter|Count[1]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.677      ;
+; 0.379 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.653      ;
+; 0.383 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.649      ;
+; 0.391 ; counter10:counter|Count[0]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.641      ;
+; 0.397 ; counter10:counter|Count[3]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.635      ;
+; 0.405 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 0.627      ;
+; 0.407 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 0.625      ;
+; 0.443 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.589      ;
+; 0.445 ; counter10:counter|Count[0]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.587      ;
+; 0.453 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.579      ;
+; 0.507 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 1.000        ; 0.000      ; 0.525      ;
+; 0.508 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 0.524      ;
+; 0.550 ; OnePulse:one_pulse|ps.A          ; OnePulse:one_pulse|ps.B          ; clk          ; clk         ; 1.000        ; 0.000      ; 0.482      ;
+; 0.557 ; OnePulse:one_pulse|ps.B          ; OnePulse:one_pulse|ps.A          ; clk          ; clk         ; 1.000        ; 0.000      ; 0.475      ;
+; 0.613 ; counter10:counter|Count[0]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.419      ;
+; 0.622 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 0.410      ;
+; 0.633 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 0.399      ;
+; 0.638 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 0.394      ;
+; 0.665 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; counter10:counter|Count[1]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; counter10:counter|Count[0]       ; counter10:counter|Count[0]       ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 1.000        ; 0.000      ; 0.367      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                            ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                        ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; counter10:counter|Count[0]       ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; counter10:counter|Count[1]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.242 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.247 ; Moore_machine:moore_machine|ps.B ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.258 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.267 ; counter10:counter|Count[0]       ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.419      ;
+; 0.323 ; OnePulse:one_pulse|ps.B          ; OnePulse:one_pulse|ps.A          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.475      ;
+; 0.330 ; OnePulse:one_pulse|ps.A          ; OnePulse:one_pulse|ps.B          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.330 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.332 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.372 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.B ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; Moore_machine:moore_machine|ps.E ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.427 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.579      ;
+; 0.435 ; counter10:counter|Count[0]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.587      ;
+; 0.437 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.589      ;
+; 0.461 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.613      ;
+; 0.461 ; Moore_machine:moore_machine|ps.D ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.613      ;
+; 0.473 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.625      ;
+; 0.473 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.C ; clk          ; clk         ; 0.000        ; 0.000      ; 0.625      ;
+; 0.475 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.D ; clk          ; clk         ; 0.000        ; 0.000      ; 0.627      ;
+; 0.477 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.477 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.629      ;
+; 0.478 ; OnePulse:one_pulse|ps.B          ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.630      ;
+; 0.483 ; counter10:counter|Count[3]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.489 ; counter10:counter|Count[0]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.641      ;
+; 0.497 ; Moore_machine:moore_machine|ps.D ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.501 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.525 ; counter10:counter|Count[1]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.677      ;
+; 0.553 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
+; 0.555 ; counter10:counter|Count[0]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.707      ;
+; 0.556 ; counter10:counter|Count[2]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.708      ;
+; 0.558 ; OnePulse:one_pulse|ps.B          ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.710      ;
+; 0.565 ; counter10:counter|Count[1]       ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.565 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.598 ; counter10:counter|Count[2]       ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.750      ;
+; 0.600 ; Moore_machine:moore_machine|ps.A ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.752      ;
+; 0.619 ; counter10:counter|Count[3]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.771      ;
+; 0.662 ; Moore_machine:moore_machine|ps.C ; Moore_machine:moore_machine|ps.A ; clk          ; clk         ; 0.000        ; 0.000      ; 0.814      ;
+; 0.671 ; counter10:counter|Count[2]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.823      ;
+; 0.683 ; counter10:counter|Count[1]       ; Moore_machine:moore_machine|ps.E ; clk          ; clk         ; 0.000        ; 0.000      ; 0.835      ;
+; 0.805 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[0]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.957      ;
+; 0.805 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[1]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.957      ;
+; 0.805 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[2]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.957      ;
+; 0.805 ; Moore_machine:moore_machine|ps.E ; counter10:counter|Count[3]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.957      ;
++-------+----------------------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                           ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.A ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.A ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.B ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.B ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.C ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.C ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.D ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.D ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Moore_machine:moore_machine|ps.E ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Moore_machine:moore_machine|ps.E ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OnePulse:one_pulse|ps.A          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; OnePulse:one_pulse|ps.A          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; OnePulse:one_pulse|ps.B          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; OnePulse:one_pulse|ps.B          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter10:counter|Count[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter10:counter|Count[3]       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; counter|Count[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; counter|Count[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.A|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.A|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.B|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.B|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.C|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.C|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.D|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.D|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; moore_machine|ps.E|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; moore_machine|ps.E|clk           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; one_pulse|ps.A|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; one_pulse|ps.A|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; one_pulse|ps.B|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; one_pulse|ps.B|clk               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SerIn     ; clk        ; -0.031 ; -0.031 ; Rise       ; clk             ;
+; clkPB     ; clk        ; -0.291 ; -0.291 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SerIn     ; clk        ; 0.458 ; 0.458 ; Rise       ; clk             ;
+; clkPB     ; clk        ; 0.438 ; 0.438 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 4.949 ; 4.949 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 4.883 ; 4.883 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 4.911 ; 4.911 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 4.847 ; 4.847 ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 4.910 ; 4.910 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 4.788 ; 4.788 ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 4.785 ; 4.785 ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 4.792 ; 4.792 ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 4.808 ; 4.808 ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 4.890 ; 4.890 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 4.890 ; 4.890 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 4.907 ; 4.907 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 4.917 ; 4.917 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 4.949 ; 4.949 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 4.894 ; 4.894 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 4.754 ; 4.754 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 4.782 ; 4.782 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 4.719 ; 4.719 ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 4.782 ; 4.782 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 4.665 ; 4.665 ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 4.680 ; 4.680 ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 4.762 ; 4.762 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 4.762 ; 4.762 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 4.779 ; 4.779 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 4.821 ; 4.821 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 4.894 ; 4.894 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 2.423 ;    ;    ; 2.423 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 2.423 ;    ;    ; 2.423 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------------------------+
+; Output Enable Times                                                  ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; SerOut    ; clk        ; 5.056 ;      ; Rise       ; clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Minimum Output Enable Times                                          ;
++-----------+------------+-------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+------+------------+-----------------+
+; SerOut    ; clk        ; 5.056 ;      ; Rise       ; clk             ;
++-----------+------------+-------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; SerOut    ; clk        ; 5.056     ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; SerOut    ; clk        ; 5.056     ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.140 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -1.140 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -8.052 ; 0.0   ; 0.0      ; 0.0     ; -15.073             ;
+;  clk             ; -8.052 ; 0.000 ; N/A      ; N/A     ; -15.073             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SerIn     ; clk        ; 1.233 ; 1.233 ; Rise       ; clk             ;
+; clkPB     ; clk        ; 0.527 ; 0.527 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SerIn     ; clk        ; 0.458 ; 0.458 ; Rise       ; clk             ;
+; clkPB     ; clk        ; 0.438 ; 0.438 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Clock to Output Times                                                         ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 10.118 ; 10.118 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 10.045 ; 10.045 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 9.945  ; 9.945  ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 9.736  ; 9.736  ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 9.731  ; 9.731  ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 9.743  ; 9.743  ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 9.763  ; 9.763  ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 10.052 ; 10.052 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 10.052 ; 10.052 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 10.074 ; 10.074 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 10.084 ; 10.084 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 10.118 ; 10.118 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 9.915  ; 9.915  ; Rise       ; clk             ;
++-----------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Output_SSD[*]   ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[0]  ; clk        ; 4.754 ; 4.754 ; Rise       ; clk             ;
+;  Output_SSD[1]  ; clk        ; 4.782 ; 4.782 ; Rise       ; clk             ;
+;  Output_SSD[2]  ; clk        ; 4.719 ; 4.719 ; Rise       ; clk             ;
+;  Output_SSD[3]  ; clk        ; 4.782 ; 4.782 ; Rise       ; clk             ;
+;  Output_SSD[4]  ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[5]  ; clk        ; 4.658 ; 4.658 ; Rise       ; clk             ;
+;  Output_SSD[6]  ; clk        ; 4.665 ; 4.665 ; Rise       ; clk             ;
+;  Output_SSD[7]  ; clk        ; 4.680 ; 4.680 ; Rise       ; clk             ;
+;  Output_SSD[8]  ; clk        ; 4.762 ; 4.762 ; Rise       ; clk             ;
+;  Output_SSD[9]  ; clk        ; 4.762 ; 4.762 ; Rise       ; clk             ;
+;  Output_SSD[10] ; clk        ; 4.779 ; 4.779 ; Rise       ; clk             ;
+;  Output_SSD[11] ; clk        ; 4.789 ; 4.789 ; Rise       ; clk             ;
+;  Output_SSD[12] ; clk        ; 4.821 ; 4.821 ; Rise       ; clk             ;
+; SerOutValid     ; clk        ; 4.894 ; 4.894 ; Rise       ; clk             ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 4.978 ;    ;    ; 4.978 ;
++------------+-------------+-------+----+----+-------+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+-------+----+----+-------+
+; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
++------------+-------------+-------+----+----+-------+
+; SerIn      ; SerOut      ; 2.423 ;    ;    ; 2.423 ;
++------------+-------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 56       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 56       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 19    ; 19   ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 55    ; 55   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Nov 29 17:48:24 2022
+Info: Command: quartus_sta OP_moore -c OP_moore
+Info: qsta_default_script.tcl version: #1
+Warning (292000): FLEXlm software error: Future license file format or misspelling in license file.  The file was issued for a later version of FLEXnet Licensing than this  program understands. Feature:       quartus License text:  d70000000000" SN=15945574 SIGN2=0 License path:  C:\flexlm\LICENSE.TXT FLEXnet Licensing error:-90,313 For further information, refer to the FLEXnet Licensing End User Guide, available at "www.macrovision.com".
+Warning (292000): FLEXlm software error: Future license file format or misspelling in license file.  The file was issued for a later version of FLEXnet Licensing than this  program understands. Feature:       quartus_talkback License text:  d70000000000" SN=15945574 SIGN2=0 License path:  C:\flexlm\LICENSE.TXT FLEXnet Licensing error:-90,313 For further information, refer to the FLEXnet Licensing End User Guide, available at "www.macrovision.com".
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'OP_moore.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.140
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.140        -8.052 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -15.073 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 0.075
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.075         0.000 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -12.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Tue Nov 29 17:48:27 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
